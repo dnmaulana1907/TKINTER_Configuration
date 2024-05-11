@@ -16,11 +16,12 @@ def Quit():
     Window.destroy()
 
 Window = tk.Tk()
+# Window.geometry("600x400")
 
 user_name = tk.StringVar()
 
 name_label = ttk.Label(Window, text="Name: ")
-name_label.pack(side="left", padx=(0, 10))
+name_label.pack(padx=(0, 10), side="left")
 
 name_entry = ttk.Entry(Window, width=15, textvariable= user_name)
 name_entry.pack(side="left")
