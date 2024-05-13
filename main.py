@@ -20,17 +20,23 @@ Window = tk.Tk()
 
 user_name = tk.StringVar()
 
-name_label = ttk.Label(Window, text="Name: ")
+input_frame = ttk.Frame(Window, padding=(20,10,20,0))
+input_frame.pack(fill="both")
+
+name_label = ttk.Label(input_frame, text="Name: ")
 name_label.pack(padx=(0, 10), side="left")
 
-name_entry = ttk.Entry(Window, width=15, textvariable= user_name)
+name_entry = ttk.Entry(input_frame, width=15, textvariable= user_name)
 name_entry.pack(side="left")
 name_entry.focus()
 
-click_button = ttk.Button(Window, text="Click", command= Count_clicked)
-click_button.pack(side="left")
+button_frame = ttk.Frame(Window, padding=(20,10))
+button_frame.pack(fill="both")
 
-quit_button = ttk.Button(Window, text="Quit", command=Quit)
-quit_button.pack(side="right")
+click_button = ttk.Button(button_frame, text="Click", command= Count_clicked)
+click_button.pack(side="left", fill="x", expand= True)
+
+quit_button = ttk.Button(button_frame, text="Quit", command=Quit)
+quit_button.pack(side="right", fill="y", expand= True)
 
 Window.mainloop()
